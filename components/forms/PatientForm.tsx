@@ -8,7 +8,13 @@ import {Form} from "@/components/ui/form"
 import CustomFormField from "@/components/CustomFormField"
 
 export enum FormFieldType {
-    INPUT = 'input'
+    INPUT = 'input',
+    TEXTAREA = 'textarea',
+    PHONE_INPUT = 'phoneInput',
+    CHECKBOX = 'checkbox',
+    DATE_PICKER = 'datePicker',
+    SELECT = 'select',
+    SKELETON = 'skeleton'
 }
 
 const formSchema = z.object({
@@ -43,6 +49,31 @@ const PatientForm = () => {
         <CustomFormField
         fieldType={FormFieldType.INPUT}
         control={form.control}
+        name="name"
+        label="Full name"
+        placeholder="John Doe"
+        iconSrc="/assets/icons/user.svg"
+        iconAlt="user"
+        />
+
+        <CustomFormField
+        fieldType={FormFieldType.INPUT}
+        control={form.control}
+        name="email"
+        label="Email"
+        placeholder="JohnDoe@gmail"
+        iconSrc="/assets/icons/email.svg"
+        iconAlt="email"
+        />
+
+        <CustomFormField
+        fieldType={FormFieldType.PHONE_INPUT}
+        control={form.control}
+        name="phone"
+        label="phone"
+        placeholder="727666666"
+        iconSrc="/assets/icons/email.svg"
+        iconAlt="email"
         />
 
       <Button type="submit">Submit</Button>
